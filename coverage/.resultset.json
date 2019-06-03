@@ -29,6 +29,8 @@
       "/Users/jordan/Documents/Makers/TechTests/bank_tech_test/lib/account.rb": [
         1,
         null,
+        1,
+        null,
         null,
         1,
         null,
@@ -37,20 +39,49 @@
         4,
         4,
         4,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         null,
         null
-      ],
-      "/Users/jordan/Documents/Makers/TechTests/bank_tech_test/spec/statement_spec.rb": [
-        1
       ],
       "/Users/jordan/Documents/Makers/TechTests/bank_tech_test/lib/statement.rb": [
         1,
         null,
         null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jordan/Documents/Makers/TechTests/bank_tech_test/spec/statement_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1559571315
+    "timestamp": 1559571510
   }
 }

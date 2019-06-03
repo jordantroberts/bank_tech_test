@@ -1,3 +1,5 @@
+require_relative 'statement'
+
 class Account
 
   # responsible for handling the transactions: deposit, withdraw, balance.
@@ -9,4 +11,17 @@ class Account
     @debit = 0.00
     @date = Date.today.strftime("%d/%m/%Y")
   end
+
+  def deposit
+    # adds to credit and adds to balance
+  end
+
+  def withdraw
+    # deducts  from balance and adds to debit
+  end
+
+  def statement
+    #shows statement
+  end
+
 end
