@@ -6,7 +6,7 @@ I worked alone on this task.
 
 ## Approach
 1. I created some User Stories (detailed below)
-2. I planned out the task. My thinking was to have two classes - an *account class*, responsible for handling the account transactions, and a *statement class*, responsible for displaying the statement in the format required for the acceptance criteria. My reasoning was in order to follow the single responsibility principle and make sure my code was well-crafted.
+2. I planned out the task. My initial thinking was to have two classes - an *account class*, responsible for handling the account transactions, and a *statement class*, responsible for displaying the statement in the format required for the acceptance criteria. My reasoning was in order to follow the single responsibility principle and make sure my code was well-crafted.
 Display responsible for statement and formatting table
 3. I wrote my first (failing) feature test and made it pass.
 
@@ -35,7 +35,7 @@ So that I don't go into debt
 I would like to be prevented from withdrawing money I don't have.
 ```
 
-# Specification (given to me by Makers Academy) 
+# Specification (given to me by Makers Academy)
 ## Requirements
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
