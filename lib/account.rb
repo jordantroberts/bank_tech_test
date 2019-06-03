@@ -3,7 +3,7 @@ require_relative 'statement'
 class Account
 
   # responsible for handling the transactions: deposit, withdraw, balance.
-  attr_reader :balance, :credit, :debit, :date
+  attr_reader :balance, :credit, :debit, :date, :statement
 
   def initialize
     @balance = 0.00
@@ -24,8 +24,10 @@ class Account
     @debit << amount
   end
 
-  def statement
-    #shows statement
+  def update_statement
+    @statement = Statement.new
+    @statement.display.push(@date, @credit, @debit, @balance)
   end
+
 
 end

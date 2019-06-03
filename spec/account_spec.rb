@@ -19,6 +19,7 @@ describe Account do
     it "opens with today's date" do
       expect(account.date).to eq(Date.today.strftime("%d/%m/%Y"))
     end
+
   end
 
   describe '#deposit' do
@@ -33,7 +34,7 @@ describe Account do
     end
   end
 
-  describe 'withdraw' do
+  describe '#withdraw' do
     it 'updates the balance' do
       account.deposit(10.00)
       account.withdraw(5.00)
@@ -44,6 +45,17 @@ describe Account do
       account.deposit(10.00)
       account.withdraw(2.00)
       expect(account.debit).to eq [2.00]
+    end
+  end
+
+  describe '#update_statement' do
+    it 'adds data to the statement' do
+      account.deposit(10.00)
+      account.withdraw(5.00)
+      account.withdraw(1.00)
+      account.update_statement
+      expect(account.statement.display).to eq [Date.today.strftime("%d/%m/%Y"), [10.00], [5.00, 1.00], 4.0]
+
     end
   end
 end
