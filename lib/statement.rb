@@ -1,4 +1,5 @@
 require_relative 'account'
+require 'Date'
 
 
 class Statement
@@ -9,4 +10,7 @@ attr_reader :display
     @display = []
   end
 
+  def format
+    #responsible for formatting in
+  end
 end
