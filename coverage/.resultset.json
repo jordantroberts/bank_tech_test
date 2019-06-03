@@ -5,7 +5,7 @@
         1,
         null,
         1,
-        5,
+        6,
         null,
         1,
         1,
@@ -21,6 +21,16 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         null,
         null,
@@ -35,14 +45,16 @@
         1,
         null,
         1,
-        4,
-        4,
-        4,
-        4,
+        5,
+        5,
+        5,
+        5,
         null,
         null,
         1,
         null,
+        1,
+        1,
         null,
         null,
         1,
@@ -66,6 +78,7 @@
         1,
         1,
         null,
+        null,
         null
       ],
       "/Users/jordan/Documents/Makers/TechTests/bank_tech_test/spec/statement_spec.rb": [
@@ -82,6 +95,6 @@
         null
       ]
     },
-    "timestamp": 1559571510
+    "timestamp": 1559571651
   }
 }

@@ -12,11 +12,13 @@ class Account
     @date = Date.today.strftime("%d/%m/%Y")
   end
 
-  def deposit
+  def deposit(amount)
     # adds to credit and adds to balance
+    @balance += amount
+    @credit += amount
   end
 
-  def withdraw
+  def withdraw(amount)
     # deducts  from balance and adds to debit
   end
 
