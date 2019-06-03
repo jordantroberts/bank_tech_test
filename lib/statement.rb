@@ -12,5 +12,10 @@ attr_reader :display
 
   def format
     #responsible for formatting in
+    puts "date || credit || debit || balance"
+    @display.map do |transaction|
+      puts @display.join(" || ")
+    end
+    return "Here's your statement" 
   end
 end

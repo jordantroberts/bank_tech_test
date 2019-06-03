@@ -9,8 +9,4 @@ describe Statement do
     end
   end
 
-  describe '#update' do
-    it 'adds info from account history into statement' do
-    end
-  end
 end

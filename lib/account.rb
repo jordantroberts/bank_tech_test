@@ -18,13 +18,13 @@ class Account
   def deposit(amount)
     # adds to credit and adds to balance
     @balance += amount
-    @credit << '%.2f' % amount.to_s
+    @credit = '%.2f' % amount.to_s
   end
 
   def withdraw(amount)
     # deducts  from balance and adds to debit
     @balance -= amount
-    @debit << '%.2f' % amount.to_s
+    @debit = '%.2f' % amount.to_s
   end
 
   def complete_transaction
