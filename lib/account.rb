@@ -20,6 +20,8 @@ class Account
 
   def withdraw(amount)
     # deducts  from balance and adds to debit
+    @balance -= amount
+    @debit += amount
   end
 
   def statement

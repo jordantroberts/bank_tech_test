@@ -28,6 +28,22 @@ describe Account do
     end
 
     it 'updates the credit' do
+      account.deposit(10.00)
+      expect(account.credit).to eq(10.00)
+    end
+  end
+
+  describe 'withdraw' do
+    it 'updates the balance' do
+      account.deposit(10.00)
+      account.withdraw(5.00)
+      expect(account.balance).to eq(5.00)
+    end
+
+    it 'updates the debit' do
+      account.deposit(10.00)
+      account.withdraw(2.00)
+      expect(account.debit).to eq(2.00)
     end
   end
 end
