@@ -9,11 +9,11 @@ describe Account do
     end
 
     it 'starts with no credit history' do
-      expect(account.credit).to eq(0.00)
+      expect(account.credit).to eq []
     end
 
     it 'starts with no debit history' do
-      expect(account.debit).to eq(0.00)
+      expect(account.debit).to eq []
     end
 
     it "opens with today's date" do
@@ -29,7 +29,7 @@ describe Account do
 
     it 'updates the credit' do
       account.deposit(10.00)
-      expect(account.credit).to eq(10.00)
+      expect(account.credit).to eq [10.00]
     end
   end
 
@@ -43,7 +43,7 @@ describe Account do
     it 'updates the debit' do
       account.deposit(10.00)
       account.withdraw(2.00)
-      expect(account.debit).to eq(2.00)
+      expect(account.debit).to eq [2.00]
     end
   end
 end

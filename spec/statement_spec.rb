@@ -8,4 +8,9 @@ describe Statement do
       expect(statement.display).to eq []
     end
   end
-end 
+
+  describe '#update' do
+    it 'adds info from account history into statement' do
+    end
+  end
+end
