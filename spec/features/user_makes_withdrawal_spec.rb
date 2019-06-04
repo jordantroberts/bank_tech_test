@@ -1,7 +1,7 @@
 require 'account'
 
-describe 'user can make a deposit transaction' do
-  it 'user deposits money' do
+describe 'user can make a withdrawal transaction' do
+  it 'user withdraws money' do
     account = Account.new
     account.deposit(15.00)
     account.withdraw(10.00)

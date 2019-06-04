@@ -5,15 +5,38 @@ Tech test practice given to us in Week 10 of Makers Academy, specifically to pra
 I worked alone on this task.
 
 ## Approach
-1. I created some User Stories (detailed below)
-2. I planned out the task. My initial thinking was to have two classes - an *account class*, responsible for handling the account transactions, and a *statement class*, responsible for displaying the statement in the format required for the acceptance criteria. My reasoning was in order to follow the single responsibility principle and make sure my code was well-crafted.
-Display responsible for statement and formatting table
+1. The first thing I did was create User Stories (detailed below).
+2. I then planned out the task. My initial thinking was to have two classes - an *account class*, responsible for handling the account transactions, and a *statement class*, responsible for displaying the statement in the format required for the acceptance criteria. My reasoning was in order to follow the single responsibility principle and make sure my code was well-crafted.
 3. I wrote my first (failing) feature test and made it pass.
+4. Initially I considered using a gem for the table but I thought that might be more difficult to properly feature test, and I wondered if that were even specifically necessary. It turns out it wasn't necessary - I don't need to over think!
+5. I also considered manually entering the date of the transaction, as the fact that this data is kept in memory and not a database means that all the transactions happen in one day when testing. However, I thought that it was more realistic and usable to have the date of the transaction automatically as today's date, which is more efficient and functional from a user's perspective. 
 
 ## How to use this program
 1. Clone this repo
 2. Run `bundle install`
+3. This program runs from the command line, as follows:
 
+```
+irb
+2.6.0 :001 > require './lib/account'
+ => true
+2.6.0 :002 > account = Account.new
+ => #<Account:0x00007ff159972de8 @balance=0.0, @credit="", @debit="", @date="04/06/2019", @transaction=[], @statement=#<Statement:0x00007ff159972b40 @display=[]>>
+2.6.0 :003 > account.deposit(10.00)
+ => "10.00 deposited"
+2.6.0 :004 > account.complete_transaction
+ => "Transaction complete"
+2.6.0 :005 > account.withdraw(15.00)
+ => "You do not have enough money"
+2.6.0 :006 > account.withdraw(5.00)
+ => "5.00 withdrawn"
+2.6.0 :007 > account.complete_transaction
+ => "Transaction complete"
+2.6.0 :008 > account.statement.format
+date || credit || debit || balance
+ => "04/06/2019 || 10.00 ||  || 10.00 || 04/06/2019 ||  || 5.00 || 5.00"
+2.6.0 :009 >
+```
 
 # User Stories
 
@@ -55,5 +78,6 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-## Learnings
-Initially I considered using a gem for the table but I thought that might be more difficult to properly feature test, and I wondered if that were even specifically necessary. It turns out I was over thinking it and I didn't need a gem!
+## Acknowledgments
+- Jordan Roberts
+- Makers Academy Challenge
