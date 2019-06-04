@@ -19,18 +19,24 @@ class Account
     # adds to credit and adds to balance
     @balance += amount
     @credit = '%.2f' % amount.to_s
+    @debit = ""
+    return "#{'%.2f' % amount.to_f} deposited"
+
   end
 
   def withdraw(amount)
     # deducts  from balance and adds to debit
     @balance -= amount
     @debit = '%.2f' % amount.to_s
+    @credit = ""
+    return "#{'%.2f' % amount.to_f} withdrawn"
   end
 
   def complete_transaction
     @transaction = []
-    @transaction.push(@date, @credit, @debit, @balance)
+    @transaction.push(@date, @credit, @debit, '%.2f' % @balance)
     update_statement
+    return "Transaction complete"
   end
 
 private
