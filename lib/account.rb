@@ -6,13 +6,13 @@ require 'Date'
 class Account
   attr_reader :balance, :credit, :debit, :date, :statement, :transaction
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = 0.00
     @credit = ''
     @debit = ''
     @date = Date.today.strftime('%d/%m/%Y')
     @transaction = []
-    @statement = Statement.new
+    @statement = statement
   end
 
   def deposit(amount)

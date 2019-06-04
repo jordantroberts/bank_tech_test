@@ -39,7 +39,7 @@ date || credit || debit || balance
 ```
 
 ## How to test this program
-Run `rspec` from the command line. This program has *100% test coverage*. 
+Run `rspec` from the command line. This program has **100% test coverage**.
 
 # User Stories
 

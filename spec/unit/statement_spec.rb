@@ -12,8 +12,8 @@ describe Statement do
   end
 
   describe '#format' do
+    let(:account) { Account.new(statement = Statement.new) }
     it 'prints the statement as a table' do
-      account = Account.new
       account.deposit(15.00)
       account.complete_transaction
       expect(account.statement.format).to eq Date.today.strftime('%d/%m/%Y') + ' || 15.00 ||  || 15.00'
