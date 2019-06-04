@@ -55,10 +55,6 @@ describe Account do
       account.withdraw(2.00)
       expect(account.debit).to eq '2.00'
     end
-
-    it 'will not allow user to take out more than what is in account' do
-      expect(account.withdraw(1.00)).to eq "You do not have enough money"
-    end
   end
 
   describe '#complete_transaction' do

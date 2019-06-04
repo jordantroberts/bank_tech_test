@@ -35,13 +35,13 @@ So that I don't go into debt
 I would like to be prevented from withdrawing money I don't have.
 ```
 
-# Specification (given to me by Makers Academy)
-## Requirements
+## Specification (given to me by Makers Academy)
+### Requirements
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
-## Acceptance criteria:
+### Acceptance criteria:
 - Given a client makes a deposit of 1000 on 10-01-2012
 - And a deposit of 2000 on 13-01-2012
 - And a withdrawal of 500 on 14-01-2012
@@ -56,4 +56,4 @@ date || credit || debit || balance
 ```
 
 ## Learnings
-Initially I considered using a gem for the table but I thought that might be more difficult to properly feature test, and I wondered if that were even specifically necessary.
+Initially I considered using a gem for the table but I thought that might be more difficult to properly feature test, and I wondered if that were even specifically necessary. It turns out I was over thinking it and I didn't need a gem!

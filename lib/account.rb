@@ -29,7 +29,7 @@ class Account
       @credit = ''
       "#{format('%.2f', amount.to_f)} withdrawn"
     else
-      "You do not have enough money"
+      'You do not have enough money'
     end
   end
 
