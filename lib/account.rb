@@ -1,45 +1,47 @@
+# frozen_string_literal: true
+
 require_relative 'statement'
 require 'Date'
 
 class Account
-
-  # responsible for handling the transactions: deposit, withdraw, balance.
   attr_reader :balance, :credit, :debit, :date, :statement, :transaction
 
   def initialize
     @balance = 0.00
-    @credit = ""
-    @debit = ""
-    @date = Date.today.strftime("%d/%m/%Y")
+    @credit = ''
+    @debit = ''
+    @date = Date.today.strftime('%d/%m/%Y')
     @transaction = []
     @statement = Statement.new
   end
 
   def deposit(amount)
-    # adds to credit and adds to balance
     @balance += amount
-    @credit = '%.2f' % amount.to_s
-    @debit = ""
-    return "#{'%.2f' % amount.to_f} deposited"
-
+    @credit = format('%.2f', amount.to_s)
+    @debit = ''
+    "#{format('%.2f', amount.to_f)} deposited"
   end
 
   def withdraw(amount)
-    # deducts  from balance and adds to debit
-    @balance -= amount
-    @debit = '%.2f' % amount.to_s
-    @credit = ""
-    return "#{'%.2f' % amount.to_f} withdrawn"
+    if @balance >= amount
+      @balance -= amount
+      @debit = format('%.2f', amount.to_s)
+      @credit = ''
+      "#{format('%.2f', amount.to_f)} withdrawn"
+    else
+      "You do not have enough money"
+    end
   end
 
   def complete_transaction
     @transaction = []
-    @transaction.push(@date, @credit, @debit, '%.2f' % @balance)
+    @transaction.push(@date, @credit, @debit, format('%.2f', @balance))
     update_statement
-    return "Transaction complete"
+    'Transaction complete'
   end
 
-private
+  private
+
   def update_statement
     @statement = statement
     @statement.display.push(@transaction)
