@@ -9,4 +9,13 @@ describe Statement do
     end
   end
 
+  describe '#format' do
+    it 'prints the statement as a table' do
+      account = Account.new #make a double ?
+      account.deposit(15.00)
+      account.complete_transaction
+      expect(account.statement.format).to eq (Date.today.strftime('%d/%m/%Y'))+ " || 15.00 ||  || 15.0"
+    end
+  end
+
 end
