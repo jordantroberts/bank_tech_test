@@ -12,12 +12,13 @@ describe Statement do
 
   describe '#format' do
     it 'prints the statement as a table' do
-      account = double(Account.new(statement = Statement.new))
-      expect(account).to receive(:deposit)
+      # account = double(Account.new(statement = statement))
+      # allow(account).to receive(:deposit).with(15.00) { 15.00 }
+      # allow(account).to receive(:complete_transaction)
+      # expect(account).to receive_message_chain(:statement, :format) { Date.today.strftime('%d/%m/%Y') + ' || 15.00 ||  || 15.00' }
+      account = Account.new
       account.deposit(15.00)
-      expect(account).to receive(:complete_transaction)
       account.complete_transaction
-      expect(account).to receive_message_chain(:statement, :format)
       expect(account.statement.format).to eq Date.today.strftime('%d/%m/%Y') + ' || 15.00 ||  || 15.00'
     end
   end

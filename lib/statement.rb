@@ -4,7 +4,9 @@ require_relative 'account'
 require 'Date'
 
 class Statement
+
   attr_reader :display
+
   def initialize
     @display = []
   end
