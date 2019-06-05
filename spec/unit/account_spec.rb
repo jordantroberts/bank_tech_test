@@ -65,10 +65,15 @@ describe Account do
   end
 
   describe '#update_statement' do
+    let(:statement) { double Statement.new }
+    let(:account) { described_class.new(statement) }
+
     it 'adds single transaction to the statement' do
       account.deposit(10.00)
+      expect(statement).to receive_message_chain(:display, :push)
       account.complete_transaction
-      expect(account.statement.display).to eq [[Date.today.strftime('%d/%m/%Y'), '10.00', '', '10.00']]
+      expect(statement).to receive(:display) { [[Date.today.strftime('%d/%m/%Y'), '10.00', '', '10.00']] }
+      expect(account.update_statement).to eq "Transaction complete"
     end
   end
 end

@@ -37,13 +37,11 @@ class Account
     @transaction = []
     @transaction.push(@date, @credit, @debit, format('%.2f', @balance))
     update_statement
-    'Transaction complete'
   end
-
-  private
 
   def update_statement
     @statement = statement
     @statement.display.push(@transaction)
+    "Transaction complete"
   end
 end

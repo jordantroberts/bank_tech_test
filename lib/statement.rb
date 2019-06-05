@@ -13,7 +13,7 @@ class Statement
 
   def format
     puts 'date || credit || debit || balance'
-    @display.map do |_transaction|
+    @display.map do |transaction|
       return @display.join(' || ')
     end
   end
