@@ -4,17 +4,8 @@ require_relative 'account'
 require 'Date'
 
 class Statement
-
-  attr_reader :display
-
-  def initialize
-    @display = []
-  end
-
-  def format
+  def print(transaction)
     puts 'date || credit || debit || balance'
-    @display.map do |transaction|
-      return @display.join(' || ')
-    end
+    transaction.join(' || ')
   end
 end

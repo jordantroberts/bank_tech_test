@@ -6,42 +6,42 @@ require 'Date'
 class Account
   attr_reader :balance, :credit, :debit, :date, :statement, :transaction
 
-  def initialize(statement = Statement.new)
-    @balance = 0.00
-    @credit = ''
-    @debit = ''
-    @date = Date.today.strftime('%d/%m/%Y')
-    @transaction = []
-    @statement = statement
+  def initialize(balance = 0.00, credit = '', debit = '', transaction = [])
+    @balance = balance
+    @credit = credit
+    @debit = debit
+    @transaction = transaction
   end
 
   def deposit(amount)
-    @balance += amount
     @credit = format('%.2f', amount.to_s)
     @debit = ''
-    "#{format('%.2f', amount.to_f)} deposited"
+    @balance += amount
+    complete_transaction
+    return format('%.2f', @balance)
   end
 
   def withdraw(amount)
     if @balance >= amount
-      @balance -= amount
       @debit = format('%.2f', amount.to_s)
       @credit = ''
-      "#{format('%.2f', amount.to_f)} withdrawn"
+      @balance -= amount
+      complete_transaction
+      return format('%.2f', @balance)
     else
       'You do not have enough money'
     end
   end
 
-  def complete_transaction
-    @transaction = []
-    @transaction.push(@date, @credit, @debit, format('%.2f', @balance))
-    update_statement
+  def view_statement
+    statement = Statement.new
+    statement.print(@transaction)
   end
 
-  def update_statement
-    @statement = statement
-    @statement.display.push(@transaction)
-    "Transaction complete"
+  private
+
+  def complete_transaction
+    @transaction.push(Date.today.strftime('%d/%m/%Y'), @credit, @debit, format('%.2f', @balance))
+    @transaction
   end
 end
