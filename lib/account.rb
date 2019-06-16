@@ -6,7 +6,7 @@ require 'Date'
 class Account
   attr_reader :balance, :credit, :debit, :date, :statement, :transaction
 
-  def initialize(balance = 0.00, credit = '', debit = '', transaction = [])
+  def initialize(balance = 0.00, credit = 0, debit = 0, transaction = [])
     @balance = balance
     @credit = credit
     @debit = debit
